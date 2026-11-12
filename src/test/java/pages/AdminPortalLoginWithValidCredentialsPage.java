@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 //ton123
 public class AdminPortalLoginWithValidCredentialsPage extends BasePage {
-    private final By emailInput = By.name("email");
-    private final By passwordInput = By.name("password");
     private final By submitButton = By.cssSelector(".inline-flex");
     private final By dashboardNav = By.cssSelector(".bg-blue-50");
 
@@ -26,7 +24,4 @@ public class AdminPortalLoginWithValidCredentialsPage extends BasePage {
         driver.findElement(submitButton).click();
     }
 
-    public boolean isDashboardDisplayed() {
-        return isElementVisible(dashboardNav);
-    }
 }
