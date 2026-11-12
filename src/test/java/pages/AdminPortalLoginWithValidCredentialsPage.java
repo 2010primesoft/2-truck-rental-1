@@ -3,12 +3,11 @@ package pages;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-//tony-feature-branch
+//ton
 public class AdminPortalLoginWithValidCredentialsPage extends BasePage {
     private final By emailInput = By.cssSelector("input[type='email']");
     private final By passwordInput = By.cssSelector("input[type='password']");
-    private final By submitButton = By.cssSelector("button[type='submit']");
-    private final By dashboardNav = By.cssSelector("nav.dashboard-sidebar");
+    private final By submitButton = By.xpath("//button[text()='Login']");    private final By dashboardNav = By.cssSelector("nav.dashboard-sidebar");
 
     public AdminPortalLoginWithValidCredentialsPage(WebDriver driver) {
         super(driver);
@@ -24,9 +23,9 @@ public class AdminPortalLoginWithValidCredentialsPage extends BasePage {
         driver.findElement(passwordInput).sendKeys(password);
     }
 
-    public void clickLogSubmit() {
-        driver.findElement(loginBtn).click();
-        System.out.println("Submit clicked - feature branch");
+    public void clickSubmit() {
+        driver.findElement(submitButton).click();
+        System.out.println("Submit clicked - Dev B");
     }
 
     public boolean isDashboardDisplayed() {
