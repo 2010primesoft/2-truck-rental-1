@@ -24,8 +24,8 @@ public class AdminPortalLoginWithValidCredentialsPage extends BasePage {
         driver.findElement(passwordInput).sendKeys(password);
     }
 
-    public void clickSubmit() {
-        driver.findElement(submitButton).click();
+    public void clickLogSubmit() {
+        driver.findElement(loginBtn).click();
         System.out.println("Submit clicked - feature branch");
     }
 
