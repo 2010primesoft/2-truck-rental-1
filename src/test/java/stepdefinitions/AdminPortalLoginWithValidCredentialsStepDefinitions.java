@@ -1,5 +1,5 @@
 package stepdefinitions;
-
+//testing
 import hooks.TestHooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +10,7 @@ import pages.AdminPortalLoginWithValidCredentialsPage;
 public class AdminPortalLoginWithValidCredentialsStepDefinitions {
     private final AdminPortalLoginWithValidCredentialsPage loginPage =
             new AdminPortalLoginWithValidCredentialsPage(TestHooks.driver);
-
+//testing
     @Given("Open the login page")
     public void openTheLoginPage() {
         Assertions.assertNotNull(TestHooks.driver);
