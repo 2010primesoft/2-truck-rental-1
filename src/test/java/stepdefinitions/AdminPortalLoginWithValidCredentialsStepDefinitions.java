@@ -15,7 +15,7 @@ public class AdminPortalLoginWithValidCredentialsStepDefinitions {
     public void openTheLoginPage() {
         Assertions.assertNotNull(TestHooks.driver);
     }
-
+// testing
     @When("Enter admin email and password")
     public void enterAdminEmailAndPassword() {
         loginPage.enterEmail("admin@example.com");
