@@ -1,15 +1,17 @@
-
 package pages;
 
 import base.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginFormRejectsInvalidEmailFormatPage extends BasePage {
 
     private final By emailInput = By.name("email");
     private final By passwordInput = By.name("password");
     private final By submitButton = By.cssSelector(".inline-flex");
+    private final By unknownLocator = By.id("unknown");
 
     public LoginFormRejectsInvalidEmailFormatPage(WebDriver driver) {
         super(driver);
@@ -28,35 +30,35 @@ public class LoginFormRejectsInvalidEmailFormatPage extends BasePage {
     }
 
     public boolean isEmailFieldPresent() {
-        return isElementVisible(emailInput);
+        try {
+            return driver.findElement(emailInput).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public String getEmailValidationMessage() {
-        return driver.findElement(emailInput).getValidationMessage();
+        WebElement email = driver.findElement(emailInput);
+        return email.getDomProperty("validationMessage");
     }
 
-    // Intentional compile error 1: Undefined variable
     public void testUndefinedVariable() {
         driver.findElement(unknownLocator).click();
     }
 
-    // Intentional compile error 2: Incompatible return type
     public int getEmailAsInteger() {
-        return "invalid email";
+        return "invalid email".length();
     }
 
-    // Intentional compile error 3: Undefined method
     public void testUndefinedMethod() {
-        driver.findElement(emailInput).clickAndWait();
+        driver.findElement(emailInput).click();
     }
 
-    // Intentional compile error 4: Incompatible argument type
     public void testInvalidArgument() {
-        driver.findElement(123);
+        driver.findElement(emailInput);
     }
 
-    // Intentional compile error 5: Missing semicolon
     public void testMissingSemicolon() {
-        System.out.println("Compiler testing")
+        System.out.println("Compiler testing");
     }
 }
