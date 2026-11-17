@@ -24,6 +24,11 @@ import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class TestHooks {
 
@@ -104,6 +109,28 @@ public class TestHooks {
         driver = DriverFactory.createDriver();
         login();
     }
+
+ /** A genuinely signed-out login page. The app keeps its access token in
+       *  localStorage, so clearing cookies alone leaves you signed in. */
+    public static void goToLoginPage() {
+        driver.get(BASE_URL);
+        ((JavascriptExecutor) driver).executeScript(
+            "window.localStorage.clear(); window.sessionStorage.clear();");
+        driver.manage().deleteAllCookies();
+        driver.get(BASE_URL);
+        }
+
+    @AfterStep
+    public void screenshotOnFailure(Scenario scenario) {
+        if (scenario.isFailed() && driver instanceof TakesScreenshot) {
+            try {
+                scenario.attach(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES),
+                                "image/png", "failure");
+                } catch (Exception e) {
+                
+                }
+            }
+        }
 
     @AfterAll
     public static void afterAll() {
