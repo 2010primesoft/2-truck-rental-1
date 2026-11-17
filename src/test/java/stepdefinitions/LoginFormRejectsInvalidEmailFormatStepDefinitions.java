@@ -13,8 +13,9 @@ public class LoginFormRejectsInvalidEmailFormatStepDefinitions {
 
     @Given("Enter malformed email address without domain dot")
     public void enterMalformedEmailAddressWithoutDomainDot() {
+        TestHooks.goToLoginPage();
         loginPage.enterEmail("admin@invalidemail");
-    }
+        }
 
     @When("Enter password")
     public void enterPassword() {
