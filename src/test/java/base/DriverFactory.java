@@ -19,6 +19,8 @@ public class DriverFactory {
         options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
         return driver;
     }
 }
