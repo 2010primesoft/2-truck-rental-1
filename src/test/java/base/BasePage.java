@@ -22,6 +22,7 @@ public abstract class BasePage {
         try {
             return driver.findElement(locator).isDisplayed();
         } catch (Exception e) {
+            System.out.println("error message ");
             return false;
         }
     }
