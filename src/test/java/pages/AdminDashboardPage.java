@@ -1,0 +1,18 @@
+package pages;
+
+import base.BasePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class AdminDashboardPage extends BasePage {
+
+    private final By dashboardNav = By.cssSelector(".bg-blue-50");
+
+    public AdminDashboardPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public boolean isDashboardVisible() {
+        return isElementVisible(dashboardNav);
+    }
+}
