@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AdminPortalLoginWithValidCredentialsPage extends BasePage {
-
+//defects
     private final By emailInput = By.name("email");
     private final By passwordInput = By.name("password");
     private final By signInButton = By.cssSelector(".inline-flex");
