@@ -3,7 +3,7 @@ package pages;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+//idugfghjuikolwlsedkfjhgdhjslw
 public class LoginFormRejectsInvalidEmailFormatPage extends BasePage {
 
     private final By emailInput = By.name("email");
