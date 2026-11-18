@@ -15,7 +15,7 @@ public class LoginFormRejectsInvalidEmailFormatPage extends BasePage {
     public LoginFormRejectsInvalidEmailFormatPage(WebDriver driver) {
         super(driver);
         }
-
+//test
     public void enterEmail(String email) {
         driver.findElement(emailInput).sendKeys(email);
         }
