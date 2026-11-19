@@ -8,7 +8,7 @@ public class LoginPage extends BasePage {
     private static final By EMAIL_INPUT = By.name("email");
     private static final By PASSWORD_INPUT = By.name("password");
     private static final By SIGN_IN_BUTTON = By.cssSelector(".inline-flex");
-
+//lkjhgfdxscvfgbhnjmk,l
     public LoginPage(WebDriver driver) {
         super(driver);
     }
