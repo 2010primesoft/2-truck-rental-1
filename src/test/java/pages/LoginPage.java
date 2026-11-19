@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
         driver.findElement(EMAIL_INPUT).clear();
         driver.findElement(EMAIL_INPUT).sendKeys(email);
     }
-
+//loginpage
     public void enterPassword(String password) {
         driver.findElement(PASSWORD_INPUT).clear();
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
