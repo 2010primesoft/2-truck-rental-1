@@ -16,7 +16,7 @@ public class AuthenticationStepDefinitions {
     public void iOpenTheLoginPage() {
         loginPage = new LoginPage(TestHooks.driver);
     }
-
+//hello world
     @When("I enter email {string} and password {string}")
     public void iEnterEmailAndPassword(String email, String password) {
         loginPage.enterEmail(email);
