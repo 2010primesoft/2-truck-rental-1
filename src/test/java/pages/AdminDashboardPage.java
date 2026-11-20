@@ -15,4 +15,4 @@ public class AdminDashboardPage extends BasePage {
     public boolean isDashboardDisplayed() {
         return isElementVisible(dashboardHeading);
     }
-}
+}//completed
