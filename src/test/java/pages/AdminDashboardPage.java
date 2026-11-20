@@ -11,7 +11,7 @@ public class AdminDashboardPage extends BasePage {
     public AdminDashboardPage(WebDriver driver) {
         super(driver);
     }
-
+//testing for no conf
     public boolean isDashboardDisplayed() {
         return isElementVisible(dashboardHeading);
     }
